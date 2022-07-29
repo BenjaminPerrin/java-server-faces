@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" >
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Navigation implicite</title>
     </h:head>
@@ -14,8 +15,17 @@
             <h:commandButton action="#{navigationController.moveToHello}" value="Aller sur la page hello" />
         </h:form>
         <h:form>
-            <h:commandButton action="page2" value="Aller sur la page 2" />
+            <h:commandLink action="#{navigationController.goToPage}" value="Aller sur la page hello">
+                <f:param name="pageId" value="hello" />
+            </h:commandLink>
+            <br />
+            <h:commandLink action="#{navigationController.goToPage}" value="Aller sur la page 2">
+                <f:param name="pageId" value="page2" />
+            </h:commandLink>
+            <br />
+            <h:commandLink action="#{navigationController.goToPage}" value="Aller sur la page d'accueil">
+                <f:param name="pageId" value="home" />
+            </h:commandLink>
         </h:form>
-
     </h:body>
 </html>
