@@ -15,7 +15,7 @@ public class HelloWorld {
     }
 
     public String getMessage() {
-
+        
         if (messageBean != null) {
             message = messageBean.getMessage();
         }
