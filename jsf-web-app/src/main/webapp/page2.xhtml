@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" >
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:ui="http://java.sun.com/jsf/facelets">>
     <h:head>
         <title>page2</title>
     </h:head>
     <h:body>
-        <h1>page2</h1>
-        <hr/>
+        <ui:composition template="templates/common.xhtml">
         
-        <h:form>
-            <h:commandButton action="home" value="Aller sur la home" />
-        </h:form>
+            <ui:define name="header">
+                <h1>Header page 2</h1>
+            </ui:define>
+            
+            <ui:define name="content">
+            <h3>content de la page 2</h3>
+            <h1>page2</h1>
+            <h:form>
+                <h:commandButton action="home?faces-redirect=true" value="Aller sur la home" />
+            </h:form>
+            </ui:define>
+            
+        </ui:composition>
+        
+
     </h:body>
 </html>
