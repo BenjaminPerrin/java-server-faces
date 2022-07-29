@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" 
-      xmlns:ui="http://java.sun.com/jsf/facelets">>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" >
+
     <h:head>
-        <title>page2</title>
+        <title>Ma 2eme page</title>
     </h:head>
     <h:body>
+
         <ui:composition template="templates/common.xhtml">
-        
+
+            <ui:param name="templateParam" value="Mon jolie param" />
+
             <ui:define name="header">
-                <h1>Header page 2</h1>
+                <h1>Je suis sur la page 2</h1>
             </ui:define>
-            
+
             <ui:define name="content">
-            <h3>content de la page 2</h3>
-            <h1>page2</h1>
-            <h:form>
-                <h:commandButton action="home?faces-redirect=true" value="Aller sur la home" />
-            </h:form>
+
+                <h3>Le contenu de ma page 2</h3>
+                <h:form>
+                    <h:commandButton action="home?faces-redirect=true" value="Page d'accueil" />
+                </h:form>
+
             </ui:define>
-            
+
         </ui:composition>
-        
 
     </h:body>
 </html>
