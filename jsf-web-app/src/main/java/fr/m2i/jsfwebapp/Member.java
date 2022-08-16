@@ -1,15 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package fr.m2i.jsfwebapp;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "userData", eager = true)
-@SessionScoped
-public class UserData {
-
-    private List<Member> members = new ArrayList<Member>();
+/**
+ *
+ * @author ben
+ */
+public class Member {
     private String name;
     private String lastName;
     private String dateOfBirth;
@@ -17,13 +16,19 @@ public class UserData {
     private String hobby;
     private String sexe;
 
-    public List<Member> getMembers() {
-        return members;
+    public Member(String name, String lastName, String dateOfBirth, String city, String hobby, String sexe) {
+        this.name = name;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.city = city;
+        this.hobby = hobby;
+        this.sexe = sexe;
     }
 
-    public void setMembers(List<Member> members) {
-        this.members = members;
+    public Member() {
+        
     }
+
 
     public String getName() {
         return name;
@@ -73,34 +78,7 @@ public class UserData {
         this.sexe = sexe;
     }
 
-   
-
-    public List<Member> getEmployees() {
-        return members;
-    }
-    
-    public String addMember(){
-        Member member = new Member(name, lastName, dateOfBirth, city, hobby, sexe);
-        members.add(member);
-        name = null;
-        lastName = null;
-        dateOfBirth = null;
-        city = null;
-        hobby = null;
-        sexe = null;
-        return "Validator.xhtml";
-    }
-    public String cancel(){
-        name = null;
-        lastName = null;
-        dateOfBirth = null;
-        city = null;
-        hobby = null;
-        sexe = null;
-        return null;
-    }
+  
     
     
-
-
 }

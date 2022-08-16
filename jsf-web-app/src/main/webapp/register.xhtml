@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Register</title>
+    </h:head>
+    <h:body>
+        <!--<h1>table</h1>-->
+
+        <h:form>
+<!--            <h:dataTable value="#{userData.employees}" var="employee">
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                        #{employee.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Departement</f:facet>
+                        #{employee.departement}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Age</f:facet>
+                        #{employee.age}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Salary</f:facet>
+                        #{employee.salary}
+                </h:column>
+            </h:dataTable>-->
+            <h3>Add Member</h3>
+            <hr />
+            <table>
+                <tr>
+                    <td>Name :</td>
+                    <td><h:inputText value="#{userData.name}"/></td>
+                </tr>
+                <tr>
+                    <td>lastName :</td>
+                    <td><h:inputText value="#{userData.lastName}"/></td>
+                </tr>
+                <tr>
+                    <td>date Of Birth :</td>
+                    <td><h:inputText value="#{userData.dateOfBirth}"/></td>
+                </tr>
+                <tr>
+                    <td>city :</td>
+                    <td>
+                        <h:selectOneMenu value = "#{userData.city}"> 
+                            <f:selectItem itemValue = "Paris" itemLabel = "Paris" /> 
+                            <f:selectItem itemValue = "Tours" itemLabel = "Tours" /> 
+                            <f:selectItem itemValue = "Tokyo" itemLabel = "Tokyo" />     
+                        </h:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>
+                    <td>hobby :</td>
+                    <td>
+                        <h:selectOneMenu value = "#{userData.hobby}"> 
+                            <f:selectItem itemValue = "Lecture" itemLabel = "Lecture" /> 
+                            <f:selectItem itemValue = "AquaPoney" itemLabel = "AquaPoney" /> 
+                            <f:selectItem itemValue = "Quidditch" itemLabel = "Quidditch" />     
+                        </h:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>
+                    <td>sexe :</td>
+                    <td>
+                        <h:selectOneRadio value = "#{userData.sexe}"> 
+                            <f:selectItem itemValue = "Femme" itemLabel = "Femme" /> 
+                            <f:selectItem itemValue = "homme" itemLabel = "homme" />
+                         </h:selectOneRadio> 
+                    </td>
+                </tr>
+                <tr>
+                    <td><h:commandButton value="Valider" action="#{userData.addMember}"/></td>
+                    <td><h:commandButton value="Annuler" action="#{userData.cancel}"/></td>
+
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>

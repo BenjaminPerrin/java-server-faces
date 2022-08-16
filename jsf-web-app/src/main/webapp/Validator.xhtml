@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Register</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{userData.members}" var="member">
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                        #{member.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">lastName</f:facet>
+                        #{member.lastName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">date Of Birth</f:facet>
+                        #{member.dateOfBirth}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">city</f:facet>
+                        #{member.city}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">hobby</f:facet>
+                        #{member.hobby}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">sexe</f:facet>
+                        #{member.sexe}
+                </h:column>
+                <tr>
+                    <td><h:commandButton value="Valider" action="#{userData.addMember}"/></td>
+                    <td><h:commandButton value="Annuler" action="#{userData.cancel}"/></td>
+
+                </tr>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
