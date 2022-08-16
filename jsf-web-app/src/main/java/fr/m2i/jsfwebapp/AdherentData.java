@@ -42,4 +42,17 @@ public class AdherentData {
     public void setAdherent(Adherent adherent) {
         this.adherent = adherent;
     }
+    public void deleteAdherent(Adherent adherent){
+        int index = adherents.indexOf(adherent);
+        adherents.remove(index);
+    }
+    public String goToUpdate(Adherent adherent) {
+        this.adherent = adherent;
+        return "update?faces-redirect=true";
+    }
+    public String updateAdherent(Adherent adherent){
+        int index = adherents.indexOf(adherent);
+        adherents.set( index , adherent);
+        return "listAdherent?faces-redirect=true";
+    }
 }

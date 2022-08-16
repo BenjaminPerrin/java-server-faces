@@ -44,7 +44,7 @@
                         <f:selectItem itemLabel="Homme" itemValue="Homme" />
                     </h:selectOneRadio>
 
-                    <h:commandButton action="#{adherentData.goToValidate}" value="Valider" />
+                    <h:commandButton action="#{adherentData.updateAdherent(adherentData.adherent)}" value="Valider" />
                     <h:commandButton action="listAdherent" value="Annuler" />
                 </h:panelGrid>
             </fieldset>

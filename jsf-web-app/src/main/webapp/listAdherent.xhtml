@@ -41,6 +41,11 @@
                     <f:facet name="header">Genre</f:facet>
                     <h:outputText value="#{a.gender}" />
                 </h:column>
+                <h:column>
+                    <h:commandButton action="#{adherentData.deleteAdherent(a)}" value="Delete" />
+                    <h:commandButton action="#{adherentData.goToUpdate(a)}" value="Modifier" />
+                </h:column>
+                
 
             </h:dataTable>
             
